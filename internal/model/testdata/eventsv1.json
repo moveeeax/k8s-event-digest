@@ -1,0 +1,51 @@
+{
+  "apiVersion": "events.k8s.io/v1",
+  "kind": "EventList",
+  "items": [
+    {
+      "apiVersion": "events.k8s.io/v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "worker-6c9d8f7b55-q4k2m.17f9a1c2d3e4f5a6",
+        "namespace": "jobs",
+        "creationTimestamp": "2026-10-28T10:02:11Z"
+      },
+      "regarding": {
+        "kind": "Pod",
+        "name": "worker-6c9d8f7b55-q4k2m",
+        "namespace": "jobs"
+      },
+      "reason": "FailedCreatePodSandBox",
+      "note": "Failed to create pod sandbox: rpc error: code = Unknown desc = failed to setup network for sandbox: plugin type=\"aws-cni\" failed: add cmd: failed to assign an IP address to container",
+      "type": "Warning",
+      "eventTime": "2026-10-28T10:02:11.482913Z",
+      "series": {
+        "count": 7,
+        "lastObservedTime": "2026-10-28T11:41:09.118422Z"
+      },
+      "reportingController": "kubelet",
+      "reportingInstance": "kubelet-ip-10-0-4-9",
+      "action": "Sandbox"
+    },
+    {
+      "apiVersion": "events.k8s.io/v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "pg-0.17f9a1c2d3e4f5b7",
+        "namespace": "data",
+        "creationTimestamp": "2026-10-28T11:12:00Z"
+      },
+      "regarding": {
+        "kind": "Pod",
+        "name": "pg-0",
+        "namespace": "data"
+      },
+      "reason": "Killing",
+      "note": "Stopping   container   postgres",
+      "type": "Normal",
+      "eventTime": "2026-10-28T11:12:00.000000Z",
+      "reportingController": "kubelet",
+      "reportingInstance": "kubelet-ip-10-0-1-8"
+    }
+  ]
+}

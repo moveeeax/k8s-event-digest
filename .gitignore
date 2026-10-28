@@ -1,0 +1,13 @@
+# Built binary, anchored to the repo root so it never shadows cmd/k8s-event-digest/
+/k8s-event-digest
+/dist/
+/coverage.out
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Never ignore fixtures
+!testdata/**
+!examples/**

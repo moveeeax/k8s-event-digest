@@ -1,0 +1,2421 @@
+{
+  "apiVersion": "v1",
+  "kind": "EventList",
+  "metadata": {
+    "resourceVersion": "48291043"
+  },
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-pt8hf.hs2zmr99",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "hq2zlpgf-pnf9-2kfj-pdvr-fpbqktfd"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-pt8hf",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:11Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "fluentbit-bztlk.qs6hffst",
+        "namespace": "kube-system",
+        "creationTimestamp": "2026-10-27T19:42:03Z",
+        "uid": "xjtd5v98-trzr-fpql-b8t6-jqqq5kd8"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "fluentbit-bztlk",
+        "namespace": "kube-system",
+        "apiVersion": "v1"
+      },
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container fluentbit in pod fluentbit",
+      "type": "Warning",
+      "count": 40,
+      "firstTimestamp": "2026-10-27T19:42:03Z",
+      "lastTimestamp": "2026-10-28T11:58:10Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-3-17.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-l94rq.2ccc5hj2",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:04Z",
+        "uid": "8mvdsdj8-vlhx-wn67-67g9-ftp4ftxn"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-l94rq",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:04Z",
+      "lastTimestamp": "2026-10-28T11:30:04Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-vmp9w.67jj4kf7",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "bfcg6bdx-76kc-qr5f-jkt7-7w6bvxnt"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-vmp9w",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:42Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-2vbpr.vhvsf5g5",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "d9w5nxz6-f7g2-tz7n-btdn-6xz5vk4x"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-2vbpr",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:47Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-q8kth.mv9rw88k",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "r2w7p5n8-gkwr-78nx-c7br-m5qmttcp"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-q8kth",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:43Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-ln2hh.bxn5fknt",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "jm6k4cb8-6mm7-87d4-wsc4-p5l2r4s6"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-ln2hh",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:45Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-86759.wzb54fl2",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "p4p68pqz-7sbb-fzhc-g782-r4hg49qp"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-86759",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:46Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-4z47n.xspsm5v2",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:08Z",
+        "uid": "6m6lhnz2-m7m8-b7t4-chgx-8mqtvlkg"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-4z47n",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:08Z",
+      "lastTimestamp": "2026-10-28T11:30:08Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-7bcxr.hrtb86jb",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "rxlqpwqz-7pcs-nfmx-mbff-vvdnr42w"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-7bcxr",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:41Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-xzklr.fnkh9swf",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "r9xthdcr-qmh7-tvgv-575g-jlnmk7t2"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-xzklr",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:40Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-flx5f.x2sh9t4r",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:11Z",
+        "uid": "n297zdlp-dpr5-7w5v-8ptx-sv4sm989"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-flx5f",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:11Z",
+      "lastTimestamp": "2026-10-28T11:30:11Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-p2h8z.ln4jpjxr",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "wq78gvdd-wtpk-hcmx-shn7-wxcjsczv"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-p2h8z",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:45Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-tkb8x.v9gdkb47",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:10Z",
+        "uid": "6jtrhtw9-2hgd-fhmr-qgnt-z9jpvztp"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-tkb8x",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:10Z",
+      "lastTimestamp": "2026-10-28T11:30:10Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "checkout-5f9b7c8d44-54zsj.9nh2zr8d",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T09:02:00Z",
+        "uid": "fjx4kcqc-rzxd-9tm7-7kr8-tqpsnzcz"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "checkout-5f9b7c8d44-54zsj",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Readiness probe failed: HTTP probe failed with statuscode: 503",
+      "type": "Warning",
+      "count": 17,
+      "firstTimestamp": "2026-10-28T09:02:00Z",
+      "lastTimestamp": "2026-10-28T09:31:12Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-41.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-mnns6.zfps8rw4",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "l6wzvv2c-wxhp-nsx7-nnj7-qmg5wh9v"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-mnns6",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:47Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-zm7l5.bhh2pm2q",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "x9qttdlk-dk6c-skr5-hbpg-bgwqlb6d"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-zm7l5",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:42Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-vwnbm.9lgsf586",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "mhckfctb-b2p7-8hbd-xmnh-277zthc9"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-vwnbm",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:46Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-v5k85.9jv27jdg",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "fr6x4q57-rhmm-sl56-v9qm-z5d8k28q"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-v5k85",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:49Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-2w4hw.qbxfhlgm",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "z78ltk88-d9nw-lbgb-97rz-7zgpckkv"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-2w4hw",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:19Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-pnkzh.mw6hr2ps",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:09Z",
+        "uid": "xngzw2kd-9z8z-wllk-rvxh-6wkgjn5n"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-pnkzh",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:09Z",
+      "lastTimestamp": "2026-10-28T11:30:09Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-fhtnl.pqp2b6rf",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "wxgw7tz2-k2q9-47p5-zj8j-cd54pttj"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-fhtnl",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:43Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-vwn2t.9mvmdvjk",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "bwb9qlbv-r7gx-gvpp-zcfl-szllzzct"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-vwn2t",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:15Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-28rfx.l2b55fpd",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "8s5x7b27-s5sz-gzdg-7jcd-flwbfrdx"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-28rfx",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:16Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-tzr4x.sf2sdqw4",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:02Z",
+        "uid": "qb2mkjm9-ktfl-wrdw-xt69-jj6wmgd6"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-tzr4x",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:02Z",
+      "lastTimestamp": "2026-10-28T11:30:02Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-qwrjq.4lk9vj6q",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "qpf8nqpf-j2cm-9cqm-8rm9-zkcnq2q5"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-qwrjq",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:48Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-sxvc7.hr2fzl2g",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "g2gbffw4-lkkb-n55q-9xh5-hx7tccw2"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-sxvc7",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:12Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-pbk6r.htwlk9vb",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:05Z",
+        "uid": "cqrtx5nv-csnk-qksz-5tkn-jj4l8ggq"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-pbk6r",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:05Z",
+      "lastTimestamp": "2026-10-28T11:30:05Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "fluentbit-ktrxs.npggjglz",
+        "namespace": "kube-system",
+        "creationTimestamp": "2026-10-27T19:42:03Z",
+        "uid": "8x9gjhkq-f47v-c8hs-6d62-m45cz824"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "fluentbit-ktrxs",
+        "namespace": "kube-system",
+        "apiVersion": "v1"
+      },
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container fluentbit in pod fluentbit",
+      "type": "Warning",
+      "count": 43,
+      "firstTimestamp": "2026-10-27T19:42:03Z",
+      "lastTimestamp": "2026-10-28T11:58:13Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-3-17.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-rhbvl.jm4kww2l",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "dh9r87rd-cswd-szwl-9mgj-jkqgvx8s"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-rhbvl",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:13Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-ncrml.lx6kgs64",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "w9bpg4hx-qm9q-86b2-7mx8-n6k4bpf5"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-ncrml",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:48Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-ncbgj.z2htkjtp",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "wfds4nt9-8vrr-g6ql-rfzs-2lfvrbhv"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-ncbgj",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:42Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-w6dkc.26zbq6rp",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "4wrhlnjv-lkbg-gdd7-ps69-w4rds4pl"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-w6dkc",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:17Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-s28s9.7qtk5rsd",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "dm24nfgd-2r5r-fscr-v2vq-bh2bwd4v"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-s28s9",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:41Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-6jgzp.b475kxnq",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "gs628dnl-857m-qh5z-pfkj-f6mpzn9d"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-6jgzp",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:45Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-7cdww.mhhp2qd2",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "kz9zmgxf-ts6b-9pmf-56gs-4vx7nm99"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-7cdww",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:15Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-6fdtv.vm2gc28b",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "8mhvpgmb-flq6-9r8n-6x86-64qwl9z7"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-6fdtv",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:42Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-mw2j4.kdhwn46x",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "4vssjb2h-bpt5-8sh6-shs7-4nctvb4g"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-mw2j4",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:45Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-bh5r2.t69ds5wg",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "rpr5gd2z-m9sd-qlgd-xfz5-52znxkq6"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-bh5r2",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:40Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-4mc6h.wxdt5qzz",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "4rvchphs-nfjq-qsn4-wxvb-gvfkdbqm"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-4mc6h",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:48Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-xwrvc.tkmx26ml",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "8z498sf7-6s5w-6jpb-lmf4-q98xlbm6"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-xwrvc",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:49Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-jxlt9.whxcn9cd",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "vwp8n9d7-dhl2-8g6n-2k9j-l7tkm94b"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-jxlt9",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:14Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-s2j54.frz9wfjm",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:05:12Z",
+        "uid": "pwkh6mh9-pl7c-cj7m-l68p-9l59qm6b"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-s2j54",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:05:12Z",
+      "lastTimestamp": "2026-10-28T11:20:00Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-xxgm8.t28xlllf",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "vhdr9n7s-sm4n-vj4n-9nfl-j9hnr76m"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-xxgm8",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:17Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-vgvf5.5m88p269",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "zjrrbbdn-22vb-kjwn-ckdz-6s2l5wlr"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-vgvf5",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:19Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-pm5f4.54c9jmws",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "qdsc45qq-ccc7-xmbb-kxsb-gmzwhttg"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-pm5f4",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:49Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-7lfpm.rbrg5jxt",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "mxl9kjhn-rdtf-snpn-5tqz-vwvgpg7f"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-7lfpm",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:44Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-kpzgb.p8gq6sfm",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "xc8c4fwd-jz4q-jp29-5l78-qlsxlg9w"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-kpzgb",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:43Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "pg-1.pbjwxk6n",
+        "namespace": "staging",
+        "creationTimestamp": "2026-10-28T07:12:30Z",
+        "uid": "fgqnp9mx-6v6v-8dzj-jrrv-jkncz4cd"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "pg-1",
+        "namespace": "staging",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedMount",
+      "message": "Unable to attach or mount volumes: unmounted volumes=[data], unattached volumes=[data]: timed out waiting for the condition",
+      "type": "Warning",
+      "count": 10,
+      "firstTimestamp": "2026-10-28T07:12:30Z",
+      "lastTimestamp": "2026-10-28T11:50:01Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-1-8.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-zw56x.cx4jctwg",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "9lbskz9j-x476-7cxb-jsrp-44jjsdz9"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-zw56x",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:40Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-8v7k6.nrzlwdt5",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "r55gtkdt-fdds-4tdp-7lrn-wc6kpd9n"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-8v7k6",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:13Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-96nkp.lmfrg2qd",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:00Z",
+        "uid": "fdvncjnj-dnnx-22b4-dhvs-gk5xlmxd"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-96nkp",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:00Z",
+      "lastTimestamp": "2026-10-28T11:30:00Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-zx2d9.c8tbhrlw",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "tmfqvzwb-nfn6-87xg-fspk-znzj64dx"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-zx2d9",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:44Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-9z4vk.blz24dm5",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "5w2b5h2l-75rx-l692-56k5-jpm4wh27"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-9z4vk",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:18Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-mbcfl.ndm7s8sl",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "hxbpxj79-777d-9pcj-6mn5-txvht7jn"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-mbcfl",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:11Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-2mqq6.vhn86jxk",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "2snl5vr6-kcrn-zw9h-8x6f-hnv4r88j"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-2mqq6",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:43Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-fgljx.hlk76nmc",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "gkr2f58f-6g4g-fl4x-v4vw-kwfxcqkp"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-fgljx",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:12Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-ffhjc.s992x9lt",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "84xwz8kl-xjtb-rm48-gvxs-dkkxw69x"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-ffhjc",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:46Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ip-10-0-3-17.eu-central-1.compute.internal.qg8kw8ww",
+        "namespace": "default",
+        "creationTimestamp": "2026-10-25T08:11:44Z",
+        "uid": "pjwn5l5r-6j2x-d9l7-wkt8-75dqzw2k"
+      },
+      "involvedObject": {
+        "kind": "Node",
+        "name": "ip-10-0-3-17.eu-central-1.compute.internal",
+        "namespace": "default",
+        "apiVersion": "v1"
+      },
+      "reason": "ImageGCFailed",
+      "message": "failed to garbage collect required amount of images. Wanted to free 6871947673 bytes, but freed 0 bytes",
+      "type": "Warning",
+      "count": 291,
+      "firstTimestamp": "2026-10-25T08:11:44Z",
+      "lastTimestamp": "2026-10-28T11:55:02Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-3-17.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-k8zrq.xlsdpkl9",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "z56nbvs8-gbcz-gsp6-78zm-dsdbnp72"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-k8zrq",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:48Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-dcjtr.nmlz6rxf",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:07Z",
+        "uid": "ww4zqnzd-w4zm-vbzd-xcjg-jdt7pvhd"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-dcjtr",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:07Z",
+      "lastTimestamp": "2026-10-28T11:30:07Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-vcnq7.p9tbrsvn",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "ltdtfm5d-7jfg-dqqq-mqxd-fcpv8gj2"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-vcnq7",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:46Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-shns7.bmdkf9kr",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "7gg6gpnt-j9vr-whl5-rsw4-kn77cvqw"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-shns7",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:16Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-c2c4m.z7w4xpgc",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:05:12Z",
+        "uid": "bm9c5vv9-5frr-wmzf-l9ph-gglhtc5h"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-c2c4m",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:05:12Z",
+      "lastTimestamp": "2026-10-28T11:20:01Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-pzhkt.m9zdrvpt",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "s5shsx4c-5l6h-zf9b-fjrv-6kkwb4qt"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-pzhkt",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:10Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "fluentbit-hp9jl.62k2krch",
+        "namespace": "kube-system",
+        "creationTimestamp": "2026-10-27T19:42:03Z",
+        "uid": "prc89mp8-2sgv-tpxd-nc4r-kxqv899m"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "fluentbit-hp9jl",
+        "namespace": "kube-system",
+        "apiVersion": "v1"
+      },
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container fluentbit in pod fluentbit",
+      "type": "Warning",
+      "count": 41,
+      "firstTimestamp": "2026-10-27T19:42:03Z",
+      "lastTimestamp": "2026-10-28T11:58:11Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-3-17.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "backup-29384160-j76jp.d5tsst2j",
+        "namespace": "default",
+        "creationTimestamp": "2026-10-28T11:05:00Z",
+        "uid": "qjrbp7k4-9gfb-mdgh-xlw5-dhzfddfp"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "backup-29384160-j76jp",
+        "namespace": "default",
+        "apiVersion": "v1"
+      },
+      "reason": "BackoffLimitExceeded",
+      "message": "Job has reached the specified backoff limit",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:05:00Z",
+      "lastTimestamp": "2026-10-28T11:05:00Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "job-controller"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "fluentbit-qxs5f.cqq4658j",
+        "namespace": "kube-system",
+        "creationTimestamp": "2026-10-27T19:42:03Z",
+        "uid": "mxb97zl9-8tvs-fzkt-sxsr-2hhpjh4v"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "fluentbit-qxs5f",
+        "namespace": "kube-system",
+        "apiVersion": "v1"
+      },
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container fluentbit in pod fluentbit",
+      "type": "Warning",
+      "count": 44,
+      "firstTimestamp": "2026-10-27T19:42:03Z",
+      "lastTimestamp": "2026-10-28T11:58:14Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-3-17.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-f5wwh.ltt6ts78",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "tp9jf5jv-xrr2-sg8h-dkrv-v24pxldw"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-f5wwh",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:18Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-z77r7.ng6jvsch",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "pt728n7j-xthx-jzdl-hlvs-ztj824fw"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-z77r7",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:47Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "fluentbit-44g79.mbsqc97k",
+        "namespace": "kube-system",
+        "creationTimestamp": "2026-10-27T19:42:03Z",
+        "uid": "nkn9xpx2-bq47-tjmw-r69h-sfpznlg4"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "fluentbit-44g79",
+        "namespace": "kube-system",
+        "apiVersion": "v1"
+      },
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container fluentbit in pod fluentbit",
+      "type": "Warning",
+      "count": 42,
+      "firstTimestamp": "2026-10-27T19:42:03Z",
+      "lastTimestamp": "2026-10-28T11:58:12Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-3-17.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-9fkqc.4njtb4tc",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:03Z",
+        "uid": "7592txf2-pl6v-2tdx-j9sp-7cz5rmdn"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-9fkqc",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:03Z",
+      "lastTimestamp": "2026-10-28T11:30:03Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "fluentbit-sz5mz.jb9xlvzh",
+        "namespace": "kube-system",
+        "creationTimestamp": "2026-10-27T19:42:03Z",
+        "uid": "gfvrcrdr-f6qr-lkgq-2nnv-g9t6kdhw"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "fluentbit-sz5mz",
+        "namespace": "kube-system",
+        "apiVersion": "v1"
+      },
+      "reason": "BackOff",
+      "message": "Back-off restarting failed container fluentbit in pod fluentbit",
+      "type": "Warning",
+      "count": 45,
+      "firstTimestamp": "2026-10-27T19:42:03Z",
+      "lastTimestamp": "2026-10-28T11:58:15Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-3-17.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-j9c4d.jtc2wpgg",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "7g76q5h8-kthk-mq2r-m5p8-hknfnt7r"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-j9c4d",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:41Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-5h26g.qpb9zgdm",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "h9tsp9n9-8rnr-z5hf-bcz8-54ghj9t5"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-5h26g",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:41Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-mgdb7.7gbx9ftm",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "2jqz7t4l-9jhr-qh7k-lxcz-6s42hpg5"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-mgdb7",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:10Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-g9plh.kgtclvz7",
+        "namespace": "payments",
+        "creationTimestamp": "2026-10-28T11:52:40Z",
+        "uid": "vx5wmljt-pplj-cr9l-8hwx-h9hxclfs"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "ledger-6b4c9d7f8c-g9plh",
+        "namespace": "payments",
+        "apiVersion": "v1"
+      },
+      "reason": "Unhealthy",
+      "message": "Liveness probe failed: Get \"http://10.0.2.19:8080/healthz\": context deadline exceeded",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:52:40Z",
+      "lastTimestamp": "2026-10-28T11:58:14Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-2-19.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-h6knc.hndbqd6c",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:06Z",
+        "uid": "gnxphj4w-4qj2-b65p-hf79-g6cnr5bq"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-h6knc",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:06Z",
+      "lastTimestamp": "2026-10-28T11:30:06Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-5bcbm.t9f255qf",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:30:01Z",
+        "uid": "tr7frpdp-v45j-zr9b-xpp9-thpdgbcg"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-5bcbm",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "Scheduled",
+      "message": "Successfully assigned prod/api to ip-10-0-2-41.eu-central-1.compute.internal",
+      "type": "Normal",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:30:01Z",
+      "lastTimestamp": "2026-10-28T11:30:01Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-qkjfk.nfvwb2qf",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "mgjdls5j-b86v-w8bf-fl47-59gxt9sx"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-qkjfk",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:44Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-dwcrb.4nk6n24g",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "nwz9j4xz-khq7-f52c-g5np-qf8tgggs"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-dwcrb",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 2,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:47Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-6hgpk.xfmszcqr",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "z2brkl5l-vcsc-mtmd-t4g5-mkxgfv2t"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-6hgpk",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 3,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:40Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-42hjx.59k9n4k7",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "7gfqqr8l-gxmh-d5nv-zqd2-hqb9cs65"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-42hjx",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 4,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:49Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "pg-0.crhnrgr2",
+        "namespace": "staging",
+        "creationTimestamp": "2026-10-28T07:12:30Z",
+        "uid": "4xsjdmtg-k7wv-2dlr-p2np-5f6g9xqx"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "pg-0",
+        "namespace": "staging",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedMount",
+      "message": "Unable to attach or mount volumes: unmounted volumes=[data], unattached volumes=[data]: timed out waiting for the condition",
+      "type": "Warning",
+      "count": 9,
+      "firstTimestamp": "2026-10-28T07:12:30Z",
+      "lastTimestamp": "2026-10-28T11:50:00Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "kubelet",
+        "host": "ip-10-0-1-8.eu-central-1.compute.internal"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Event",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-pnr72.jg8bj599",
+        "namespace": "prod",
+        "creationTimestamp": "2026-10-28T11:48:11Z",
+        "uid": "9wglf8c5-sznh-qp2g-jvvt-hsz4h9ls"
+      },
+      "involvedObject": {
+        "kind": "Pod",
+        "name": "api-7d9f8c4b6d-pnr72",
+        "namespace": "prod",
+        "apiVersion": "v1"
+      },
+      "reason": "FailedScheduling",
+      "message": "0/9 nodes are available: 6 Insufficient cpu, 3 node(s) had untolerated taint {workload: batch}. preemption: 0/9 nodes are available: 9 No preemption victims found.",
+      "type": "Warning",
+      "count": 1,
+      "firstTimestamp": "2026-10-28T11:48:11Z",
+      "lastTimestamp": "2026-10-28T11:59:44Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": "",
+      "source": {
+        "component": "default-scheduler"
+      }
+    }
+  ]
+}

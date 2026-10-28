@@ -1,0 +1,76 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ['1.24', '1.25']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+          cache: true
+
+      - name: gofmt
+        run: |
+          unformatted=$(gofmt -l .)
+          if [ -n "$unformatted" ]; then
+            echo "these files need gofmt:"
+            echo "$unformatted"
+            exit 1
+          fi
+
+      - name: go vet
+        run: go vet ./...
+
+      - name: go test
+        run: go test -race -count=1 ./...
+
+  smoke:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+          cache: true
+
+      - name: build
+        run: go build -o k8s-event-digest ./cmd/k8s-event-digest
+
+      - name: digest the sample dump
+        run: ./k8s-event-digest --from-json examples/events-sample.json --now 2026-10-28T12:00:00Z
+
+      - name: --fail-on-new must exit 1 on the sample
+        run: |
+          set +e
+          ./k8s-event-digest --from-json examples/events-sample.json \
+            --now 2026-10-28T12:00:00Z --fail-on-new --format json >/dev/null
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "expected exit 1, got $code"
+            exit 1
+          fi
+
+      - name: a digest with no new groups must exit 0
+        run: |
+          ./k8s-event-digest --from-json examples/events-sample.json \
+            --now 2026-10-28T12:00:00Z --ignore-reason FailedScheduling \
+            --fail-on-new --format json >/dev/null
