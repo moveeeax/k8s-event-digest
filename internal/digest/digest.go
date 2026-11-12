@@ -42,6 +42,7 @@ type Options struct {
 	IgnoreReasons []string
 	MinCount      int
 	Top           int
+	Baseline      *Baseline // nil means no comparison
 }
 
 // Defaults returns the option set the CLI starts from.
@@ -73,6 +74,7 @@ type Group struct {
 	Score       float64   `json:"score"`
 	Message     string    `json:"message"`
 	Sources     []string  `json:"sources,omitempty"`
+	Change      string    `json:"change,omitempty"` // set only when a baseline was given
 }
 
 // Span is how long the group has been complaining.
@@ -88,6 +90,19 @@ type Result struct {
 	TotalOccurrences int       `json:"totalOccurrences"`
 	GroupsTotal      int       `json:"groupsTotal"`
 	Groups           []Group   `json:"groups"`
+	// Baseline and Gone are set only when the run was compared to a baseline.
+	Baseline *BaselineSummary `json:"baseline,omitempty"`
+	Gone     []Group          `json:"gone,omitempty"`
+}
+
+// AddedGroups counts groups absent from the baseline, which is what
+// --fail-on-added acts on. It counts before --top, so a gate cannot be dodged
+// by trimming the output.
+func (r Result) AddedGroups() int {
+	if r.Baseline == nil {
+		return 0
+	}
+	return r.Baseline.Added
 }
 
 // NewGroups counts groups classified as new, which is what --fail-on-new acts on.
@@ -211,6 +226,13 @@ func Build(events []model.Event, opts Options) Result {
 
 	sort.Slice(out, func(i, j int) bool { return less(out[i], out[j]) })
 	res.GroupsTotal = len(out)
+	// Compare before --top: a group trimmed from the output still exists, and
+	// must not show up as gone or hide an added one.
+	if opts.Baseline != nil {
+		sum, gone := compare(out, opts.Now, *opts.Baseline)
+		res.Baseline = &sum
+		res.Gone = gone
+	}
 	if opts.Top > 0 && len(out) > opts.Top {
 		out = out[:opts.Top]
 	}

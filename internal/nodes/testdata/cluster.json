@@ -1,0 +1,819 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "metadata": {
+    "resourceVersion": ""
+  },
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Node",
+      "metadata": {
+        "name": "ip-10-0-1-11.eu-central-1.compute.internal",
+        "labels": {
+          "kubernetes.io/hostname": "ip-10-0-1-11.eu-central-1.compute.internal",
+          "kubernetes.io/os": "linux"
+        }
+      },
+      "spec": {},
+      "status": {
+        "capacity": {
+          "cpu": "4",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "allocatable": {
+          "cpu": "3920m",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": ""
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": ""
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": ""
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletReady",
+            "message": ""
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Node",
+      "metadata": {
+        "name": "ip-10-0-1-12.eu-central-1.compute.internal",
+        "labels": {
+          "kubernetes.io/hostname": "ip-10-0-1-12.eu-central-1.compute.internal",
+          "kubernetes.io/os": "linux"
+        }
+      },
+      "spec": {
+        "taints": [
+          {
+            "key": "node.kubernetes.io/memory-pressure",
+            "effect": "NoSchedule",
+            "timeAdded": "2026-10-28T11:48:00Z"
+          }
+        ]
+      },
+      "status": {
+        "capacity": {
+          "cpu": "4",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "allocatable": {
+          "cpu": "3920m",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "True",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-28T11:48:00Z",
+            "reason": "KubeletHasInsufficientMemory",
+            "message": ""
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": ""
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": ""
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletReady",
+            "message": ""
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Node",
+      "metadata": {
+        "name": "ip-10-0-1-13.eu-central-1.compute.internal",
+        "labels": {
+          "kubernetes.io/hostname": "ip-10-0-1-13.eu-central-1.compute.internal",
+          "kubernetes.io/os": "linux"
+        }
+      },
+      "spec": {
+        "taints": [
+          {
+            "key": "node.kubernetes.io/unschedulable",
+            "effect": "NoSchedule",
+            "timeAdded": "2026-10-28T09:10:00Z"
+          }
+        ],
+        "unschedulable": true
+      },
+      "status": {
+        "capacity": {
+          "cpu": "4",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "allocatable": {
+          "cpu": "3920m",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": ""
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": ""
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": ""
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletReady",
+            "message": ""
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Node",
+      "metadata": {
+        "name": "ip-10-0-1-14.eu-central-1.compute.internal",
+        "labels": {
+          "kubernetes.io/hostname": "ip-10-0-1-14.eu-central-1.compute.internal",
+          "kubernetes.io/os": "linux"
+        }
+      },
+      "spec": {
+        "taints": [
+          {
+            "key": "node.kubernetes.io/unreachable",
+            "effect": "NoExecute",
+            "timeAdded": "2026-10-28T11:54:30Z"
+          },
+          {
+            "key": "node.kubernetes.io/unreachable",
+            "effect": "NoSchedule",
+            "timeAdded": "2026-10-28T11:54:30Z"
+          }
+        ]
+      },
+      "status": {
+        "capacity": {
+          "cpu": "4",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "allocatable": {
+          "cpu": "3920m",
+          "memory": "16Gi",
+          "pods": "58"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": ""
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": ""
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": ""
+          },
+          {
+            "type": "Ready",
+            "status": "Unknown",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-28T11:54:00Z",
+            "reason": "NodeStatusUnknown",
+            "message": ""
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Node",
+      "metadata": {
+        "name": "ip-10-0-2-21.eu-central-1.compute.internal",
+        "labels": {
+          "kubernetes.io/hostname": "ip-10-0-2-21.eu-central-1.compute.internal",
+          "kubernetes.io/os": "linux",
+          "accelerator": "nvidia"
+        }
+      },
+      "spec": {
+        "taints": [
+          {
+            "key": "nvidia.com/gpu",
+            "value": "present",
+            "effect": "NoSchedule"
+          }
+        ]
+      },
+      "status": {
+        "capacity": {
+          "cpu": "8",
+          "memory": "30Gi",
+          "pods": "58"
+        },
+        "allocatable": {
+          "cpu": "7910m",
+          "memory": "30Gi",
+          "pods": "58"
+        },
+        "conditions": [
+          {
+            "type": "MemoryPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientMemory",
+            "message": ""
+          },
+          {
+            "type": "DiskPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasNoDiskPressure",
+            "message": ""
+          },
+          {
+            "type": "PIDPressure",
+            "status": "False",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletHasSufficientPID",
+            "message": ""
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastHeartbeatTime": "2026-10-28T11:59:40Z",
+            "lastTransitionTime": "2026-10-19T08:00:00Z",
+            "reason": "KubeletReady",
+            "message": ""
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-x2k9p",
+        "namespace": "prod"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "api",
+            "image": "registry.example/api:1",
+            "resources": {
+              "requests": {
+                "cpu": "1",
+                "memory": "2Gi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-11.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-q7wlm",
+        "namespace": "prod"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "api",
+            "image": "registry.example/api:1",
+            "resources": {
+              "requests": {
+                "cpu": "1000m",
+                "memory": "2Gi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-11.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "ledger-6b4c9d7f8c-pt8hf",
+        "namespace": "payments"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "ledger",
+            "image": "registry.example/ledger:1",
+            "resources": {
+              "requests": {
+                "cpu": "500m",
+                "memory": "4Gi"
+              }
+            }
+          }
+        ],
+        "initContainers": [
+          {
+            "name": "istio-proxy",
+            "image": "registry.example/istio-proxy:1",
+            "resources": {
+              "requests": {
+                "cpu": "100m",
+                "memory": "128Mi"
+              }
+            },
+            "restartPolicy": "Always"
+          },
+          {
+            "name": "migrate",
+            "image": "registry.example/migrate:1",
+            "resources": {
+              "requests": {
+                "cpu": "1500m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-11.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "web-5c8d7b9f6d-zzkq4",
+        "namespace": "prod"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "web",
+            "image": "registry.example/web:1",
+            "resources": {
+              "requests": {
+                "cpu": "100m"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-11.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Pending",
+        "conditions": [
+          {
+            "type": "PodScheduled",
+            "status": "True"
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "report-29384160-9wqtr",
+        "namespace": "batch"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "report",
+            "image": "registry.example/report:1",
+            "resources": {
+              "requests": {
+                "cpu": "2",
+                "memory": "4Gi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-11.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Succeeded"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "redis-0",
+        "namespace": "cache"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "redis",
+            "image": "registry.example/redis:1",
+            "resources": {
+              "requests": {
+                "cpu": "2",
+                "memory": "14Gi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-12.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "worker-7f9c6d5b8b-m4kd2",
+        "namespace": "workers"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "worker",
+            "image": "registry.example/worker:1",
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-12.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Failed",
+        "reason": "Evicted",
+        "message": "The node was low on resource: memory. Threshold quantity: 100Mi, available: 87232Ki. Container worker was using 2148556Ki, request is 512Mi, has larger consumption of memory. ",
+        "conditions": [
+          {
+            "type": "DisruptionTarget",
+            "status": "True",
+            "reason": "TerminationByKubelet",
+            "lastTransitionTime": "2026-10-28T11:49:30Z"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "name": "worker",
+            "state": {
+              "terminated": {
+                "exitCode": 137,
+                "reason": "Error",
+                "finishedAt": "2026-10-28T11:49:41Z"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "worker-7f9c6d5b8b-h8s2t",
+        "namespace": "workers"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "worker",
+            "image": "registry.example/worker:1",
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-12.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Failed",
+        "reason": "Evicted",
+        "message": "The node was low on resource: ephemeral-storage. Threshold quantity: 2Gi, available: 1536Mi. ",
+        "containerStatuses": [
+          {
+            "name": "worker",
+            "state": {
+              "terminated": {
+                "exitCode": 137,
+                "reason": "Error",
+                "finishedAt": "2026-10-28T11:31:05Z"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "worker-7f9c6d5b8b-v6p9r",
+        "namespace": "workers"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "worker",
+            "image": "registry.example/worker:1",
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-12.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Failed",
+        "reason": "Evicted",
+        "message": "The node was low on resource: memory. ",
+        "containerStatuses": [
+          {
+            "name": "worker",
+            "state": {
+              "terminated": {
+                "exitCode": 137,
+                "finishedAt": "2026-10-28T08:02:00Z"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "pg-0",
+        "namespace": "staging"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "pg",
+            "image": "registry.example/pg:1",
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-13.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "pg-1",
+        "namespace": "staging"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "pg",
+            "image": "registry.example/pg:1",
+            "resources": {
+              "requests": {
+                "cpu": "500m",
+                "memory": "1Gi"
+              }
+            }
+          }
+        ],
+        "nodeName": "ip-10-0-1-14.eu-central-1.compute.internal"
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "api-7d9f8c4b6d-p4n2c",
+        "namespace": "prod"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "api",
+            "image": "registry.example/api:1",
+            "resources": {
+              "requests": {
+                "cpu": "1",
+                "memory": "2Gi"
+              }
+            }
+          }
+        ]
+      },
+      "status": {
+        "phase": "Pending"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "trainer-0",
+        "namespace": "ml"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "trainer",
+            "image": "registry.example/trainer:1",
+            "resources": {
+              "requests": {
+                "cpu": "2",
+                "memory": "4Gi"
+              }
+            }
+          }
+        ],
+        "tolerations": [
+          {
+            "key": "nvidia.com/gpu",
+            "operator": "Exists",
+            "effect": "NoSchedule"
+          }
+        ],
+        "nodeSelector": {
+          "accelerator": "nvidia"
+        }
+      },
+      "status": {
+        "phase": "Pending"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "huge-0",
+        "namespace": "batch"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "huge",
+            "image": "registry.example/huge:1",
+            "resources": {
+              "requests": {
+                "cpu": "500m",
+                "memory": "64Gi"
+              }
+            }
+          }
+        ],
+        "nodeSelector": {
+          "pool": "highmem"
+        }
+      },
+      "status": {
+        "phase": "Pending"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "queued-0",
+        "namespace": "batch"
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "queued",
+            "image": "registry.example/queued:1",
+            "resources": {
+              "requests": {
+                "cpu": "250m",
+                "memory": "256Mi"
+              }
+            }
+          }
+        ],
+        "schedulingGates": [
+          {
+            "name": "kueue.x-k8s.io/admission"
+          }
+        ]
+      },
+      "status": {
+        "phase": "Pending"
+      }
+    }
+  ]
+}

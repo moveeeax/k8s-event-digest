@@ -74,3 +74,31 @@ jobs:
           ./k8s-event-digest --from-json examples/events-sample.json \
             --now 2026-10-28T12:00:00Z --ignore-reason FailedScheduling \
             --fail-on-new --format json >/dev/null
+
+      - name: --fail-on-added must exit 1 against a baseline without the new group
+        run: |
+          ./k8s-event-digest --from-json examples/events-sample.json \
+            --now 2026-10-28T12:00:00Z --ignore-reason FailedScheduling \
+            --format json > before.json
+          set +e
+          ./k8s-event-digest --from-json examples/events-sample.json \
+            --now 2026-10-28T12:00:00Z --baseline before.json --fail-on-added >/dev/null
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "expected exit 1, got $code"
+            exit 1
+          fi
+
+      - name: node pressure report on the sample dump
+        run: |
+          ./k8s-event-digest nodes --from-json examples/nodes-sample.json --now 2026-10-28T12:00:00Z
+          set +e
+          ./k8s-event-digest nodes --from-json examples/nodes-sample.json \
+            --now 2026-10-28T12:00:00Z --fail-on-pressure --format json >/dev/null
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "expected exit 1 from --fail-on-pressure, got $code"
+            exit 1
+          fi

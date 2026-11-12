@@ -47,25 +47,45 @@ func writeJSON(w io.Writer, res digest.Result) error {
 
 func writeTable(w io.Writer, res digest.Result) error {
 	if len(res.Groups) == 0 {
-		_, err := fmt.Fprintf(w, "no events matched (%d considered, window %s)\n",
-			res.EventsConsidered, res.Window)
-		return err
+		if _, err := fmt.Fprintf(w, "no events matched (%d considered, window %s)\n",
+			res.EventsConsidered, res.Window); err != nil {
+			return err
+		}
+		if res.Baseline != nil {
+			fmt.Fprintf(w, "%s\n", baselineLine(res))
+		}
+		return writeGoneTable(w, res)
 	}
 
-	fmt.Fprintf(w, "%d groups from %d events (%d occurrences) in the last %s, %d new within %s\n\n",
+	fmt.Fprintf(w, "%d groups from %d events (%d occurrences) in the last %s, %d new within %s\n",
 		res.GroupsTotal, res.EventsFiltered, res.TotalOccurrences, res.Window,
 		res.NewGroups(), res.NewWithin)
+	if res.Baseline != nil {
+		fmt.Fprintf(w, "%s\n", baselineLine(res))
+	}
+	fmt.Fprintln(w)
 
+	diff := res.Baseline != nil
 	for _, ns := range namespaces(res.Groups) {
 		fmt.Fprintf(w, "namespace: %s\n", ns)
 		tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
-		fmt.Fprintln(tw, "  CLASS\tTYPE\tREASON\tROOT\tOCC\tOBJS\tFIRST\tLAST\tMESSAGE")
+		if diff {
+			fmt.Fprint(tw, "  CHANGE\tCLASS")
+		} else {
+			fmt.Fprint(tw, "  CLASS")
+		}
+		fmt.Fprintln(tw, "\tTYPE\tREASON\tROOT\tOCC\tOBJS\tFIRST\tLAST\tMESSAGE")
 		for _, g := range res.Groups {
 			if g.Namespace != ns {
 				continue
 			}
-			fmt.Fprintf(tw, "  %s\t%s\t%s\t%s\t%d\t%d\t%s\t%s\t%s\n",
-				g.Class, shortType(g.Type), g.Reason, g.Root, g.Occurrences, g.Objects,
+			if diff {
+				fmt.Fprintf(tw, "  %s\t%s", g.Change, g.Class)
+			} else {
+				fmt.Fprintf(tw, "  %s", g.Class)
+			}
+			fmt.Fprintf(tw, "\t%s\t%s\t%s\t%d\t%d\t%s\t%s\t%s\n",
+				shortType(g.Type), g.Reason, g.Root, g.Occurrences, g.Objects,
 				ago(res.GeneratedAt, g.First), ago(res.GeneratedAt, g.Last),
 				truncate(g.Message, messageWidth))
 		}
@@ -74,7 +94,30 @@ func writeTable(w io.Writer, res digest.Result) error {
 		}
 		fmt.Fprintln(w)
 	}
-	return nil
+	return writeGoneTable(w, res)
+}
+
+func baselineLine(res digest.Result) string {
+	b := res.Baseline
+	return fmt.Sprintf("vs baseline %s: %d added, %d worse (rate over %gx), %d unchanged, %d gone",
+		b.GeneratedAt.Format(time.RFC3339), b.Added, b.Worse, b.WorseFactor, b.Unchanged, b.Gone)
+}
+
+// writeGoneTable lists what the baseline had and this run does not. Ages are
+// relative to this run.
+func writeGoneTable(w io.Writer, res digest.Result) error {
+	if len(res.Gone) == 0 {
+		return nil
+	}
+	fmt.Fprintln(w, "gone since baseline:")
+	tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
+	fmt.Fprintln(tw, "  NAMESPACE\tTYPE\tREASON\tROOT\tOCC\tLAST SEEN")
+	for _, g := range res.Gone {
+		fmt.Fprintf(tw, "  %s\t%s\t%s\t%s\t%d\t%s\n",
+			g.Namespace, shortType(g.Type), g.Reason, g.Root, g.Occurrences,
+			ago(res.GeneratedAt, g.Last))
+	}
+	return tw.Flush()
 }
 
 func writeMarkdown(w io.Writer, res digest.Result) error {
@@ -83,19 +126,52 @@ func writeMarkdown(w io.Writer, res digest.Result) error {
 		res.GroupsTotal, res.EventsFiltered, res.TotalOccurrences, res.Window,
 		res.NewWithin, res.NewGroups())
 
-	if len(res.Groups) == 0 {
-		_, err := fmt.Fprintln(w, "_No events matched._")
-		return err
+	if res.Baseline != nil {
+		fmt.Fprintf(w, "Compared %s.\n\n", strings.TrimPrefix(baselineLine(res), "vs "))
 	}
 
-	fmt.Fprintln(w, "| Class | Type | Namespace | Reason | Root | Occ | Objs | First | Last | Message |")
-	fmt.Fprintln(w, "|---|---|---|---|---|---:|---:|---|---|---|")
+	if len(res.Groups) == 0 {
+		if _, err := fmt.Fprintln(w, "_No events matched._"); err != nil {
+			return err
+		}
+		return writeGoneMarkdown(w, res)
+	}
+
+	diff := res.Baseline != nil
+	if diff {
+		fmt.Fprintln(w, "| Change | Class | Type | Namespace | Reason | Root | Occ | Objs | First | Last | Message |")
+		fmt.Fprintln(w, "|---|---|---|---|---|---|---:|---:|---|---|---|")
+	} else {
+		fmt.Fprintln(w, "| Class | Type | Namespace | Reason | Root | Occ | Objs | First | Last | Message |")
+		fmt.Fprintln(w, "|---|---|---|---|---|---:|---:|---|---|---|")
+	}
 	for _, g := range res.Groups {
+		if diff {
+			fmt.Fprintf(w, "| %s ", g.Change)
+		}
 		fmt.Fprintf(w, "| %s | %s | `%s` | `%s` | `%s` | %d | %d | %s | %s | %s |\n",
 			g.Class, shortType(g.Type), g.Namespace, g.Reason, g.Root,
 			g.Occurrences, g.Objects,
 			ago(res.GeneratedAt, g.First), ago(res.GeneratedAt, g.Last),
 			escapePipes(truncate(g.Message, messageWidth)))
+	}
+	return writeGoneMarkdown(w, res)
+}
+
+func writeGoneMarkdown(w io.Writer, res digest.Result) error {
+	if len(res.Gone) == 0 {
+		return nil
+	}
+	fmt.Fprintln(w, "\nGone since baseline:")
+	fmt.Fprintln(w)
+	fmt.Fprintln(w, "| Type | Namespace | Reason | Root | Occ | Last seen |")
+	fmt.Fprintln(w, "|---|---|---|---|---:|---|")
+	for _, g := range res.Gone {
+		if _, err := fmt.Fprintf(w, "| %s | `%s` | `%s` | `%s` | %d | %s |\n",
+			shortType(g.Type), g.Namespace, g.Reason, g.Root, g.Occurrences,
+			ago(res.GeneratedAt, g.Last)); err != nil {
+			return err
+		}
 	}
 	return nil
 }

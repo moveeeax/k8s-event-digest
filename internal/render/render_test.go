@@ -132,3 +132,48 @@ func TestTruncate(t *testing.T) {
 		t.Errorf("truncated text should be marked: %q", got)
 	}
 }
+
+func withBaseline() digest.Result {
+	res := sample()
+	res.Groups[0].Change = digest.ChangeAdded
+	res.Groups[1].Change = digest.ChangeWorse
+	res.Baseline = &digest.BaselineSummary{
+		GeneratedAt: now.Add(-time.Hour), WorseFactor: 2, Added: 1, Worse: 1, Gone: 1,
+	}
+	res.Gone = []digest.Group{{
+		Namespace: "staging", Reason: "FailedMount", Kind: "Pod", Root: "StatefulSet/pg",
+		Type: "Warning", Occurrences: 19, Last: now.Add(-70 * time.Minute), Change: digest.ChangeGone,
+	}}
+	return res
+}
+
+func TestBaselineColumnsOnlyWithBaseline(t *testing.T) {
+	if out := render(t, sample(), FormatTable); strings.Contains(out, "CHANGE") {
+		t.Errorf("CHANGE column without a baseline:\n%s", out)
+	}
+	if out := render(t, sample(), FormatMarkdown); strings.Contains(out, "| Change |") {
+		t.Errorf("Change column without a baseline:\n%s", out)
+	}
+
+	table := render(t, withBaseline(), FormatTable)
+	for _, want := range []string{"CHANGE", "added", "worse", "1 added, 1 worse (rate over 2x), 0 unchanged, 1 gone", "gone since baseline:", "StatefulSet/pg", "1h"} {
+		if !strings.Contains(table, want) {
+			t.Errorf("table missing %q:\n%s", want, table)
+		}
+	}
+
+	md := render(t, withBaseline(), FormatMarkdown)
+	for _, want := range []string{"| Change | Class |", "| added | new |", "Gone since baseline:", "| warn | `staging` | `FailedMount` |"} {
+		if !strings.Contains(md, want) {
+			t.Errorf("markdown missing %q:\n%s", want, md)
+		}
+	}
+}
+
+func TestGoneShownWhenNothingMatches(t *testing.T) {
+	res := withBaseline()
+	res.Groups = nil
+	if out := render(t, res, FormatTable); !strings.Contains(out, "no events matched") || !strings.Contains(out, "gone since baseline:") {
+		t.Errorf("an empty run should still list what went away:\n%s", out)
+	}
+}
