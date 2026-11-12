@@ -21,7 +21,7 @@ import (
 // Exit codes.
 const (
 	ExitOK       = 0 // digest produced, nothing to gate on
-	ExitFindings = 1 // --fail-on-new and at least one group is new
+	ExitFindings = 1 // a --fail-on-* gate matched
 	ExitError    = 2 // bad flags, unreadable input, API failure
 )
 
@@ -60,12 +60,19 @@ type options struct {
 	top          int
 	format       string
 	failOnNew    bool
+	baseline     string
+	worseFactor  float64
+	failOnAdded  bool
 	timeout      time.Duration
 	showVersion  bool
 }
 
 // Run executes one invocation. argv excludes the program name.
 func Run(argv []string, stdout, stderr io.Writer) int {
+	if len(argv) > 0 && argv[0] == "nodes" {
+		return runNodes(argv[1:], stdout, stderr)
+	}
+
 	var o options
 	fs := flag.NewFlagSet("k8s-event-digest", flag.ContinueOnError)
 	fs.SetOutput(stderr)
@@ -90,6 +97,9 @@ func Run(argv []string, stdout, stderr io.Writer) int {
 	fs.IntVar(&o.top, "top", 0, "keep only the top N groups after ranking")
 	fs.StringVar(&o.format, "format", "table", "table, json or markdown")
 	fs.BoolVar(&o.failOnNew, "fail-on-new", false, "exit 1 when any group is classified new")
+	fs.StringVar(&o.baseline, "baseline", "", "compare against a previous --format json digest or --dump-json payload")
+	fs.Float64Var(&o.worseFactor, "worse-factor", digest.DefaultWorseFactor, "with --baseline, a group whose occurrence rate grew by more than this is worse")
+	fs.BoolVar(&o.failOnAdded, "fail-on-added", false, "with --baseline, exit 1 when any group is absent from the baseline")
 	fs.DurationVar(&o.timeout, "timeout", 30*time.Second, "API request timeout")
 	fs.BoolVar(&o.showVersion, "version", false, "print version and exit")
 
@@ -143,6 +153,19 @@ func Run(argv []string, stdout, stderr io.Writer) int {
 		return ExitError
 	}
 
+	if o.failOnAdded && o.baseline == "" {
+		fmt.Fprintln(stderr, "error: --fail-on-added needs --baseline")
+		return ExitError
+	}
+	if o.baseline == "-" && o.fromJSON == "-" {
+		fmt.Fprintln(stderr, "error: --baseline and --from-json cannot both read stdin")
+		return ExitError
+	}
+	if o.worseFactor < 1 {
+		fmt.Fprintf(stderr, "error: --worse-factor %v must be at least 1\n", o.worseFactor)
+		return ExitError
+	}
+
 	opts.Namespace = o.namespace
 	opts.Reason = o.reason
 	opts.Kind = o.kind
@@ -150,6 +173,24 @@ func Run(argv []string, stdout, stderr io.Writer) int {
 	opts.IgnoreReasons = o.ignoreReason
 	opts.MinCount = o.minCount
 	opts.Top = o.top
+
+	if o.baseline != "" {
+		data, err := collect.FromFile(o.baseline)
+		if err != nil {
+			fmt.Fprintf(stderr, "error: %v\n", err)
+			return ExitError
+		}
+		base, truncated, err := digest.LoadBaseline(data, opts)
+		if err != nil {
+			fmt.Fprintf(stderr, "error: %s: %v\n", o.baseline, err)
+			return ExitError
+		}
+		if truncated {
+			fmt.Fprintf(stderr, "warning: %s was cut by --top; groups it dropped will show as added\n", o.baseline)
+		}
+		base.WorseFactor = o.worseFactor
+		opts.Baseline = &base
+	}
 
 	raw, err := gather(o)
 	if err != nil {
@@ -176,6 +217,9 @@ func Run(argv []string, stdout, stderr io.Writer) int {
 	}
 
 	if o.failOnNew && res.NewGroups() > 0 {
+		return ExitFindings
+	}
+	if o.failOnAdded && res.AddedGroups() > 0 {
 		return ExitFindings
 	}
 	return ExitOK
@@ -223,10 +267,13 @@ func usage(fs *flag.FlagSet, w io.Writer) {
 
 Usage:
   k8s-event-digest [flags]
+  k8s-event-digest nodes [flags]   node conditions, headroom, evictions, Pending pods
+                                   (see k8s-event-digest nodes -h)
 
 Exit codes:
   0  digest printed
-  1  --fail-on-new and at least one group is new
+  1  --fail-on-new and at least one group is new, or
+     --fail-on-added and at least one group is absent from --baseline
   2  bad flags, unreadable input or an API failure
 
 Flags:

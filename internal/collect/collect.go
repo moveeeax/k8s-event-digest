@@ -45,9 +45,9 @@ func Live(ctx context.Context, kubeconfig, kubecontext, namespace string, timeou
 	if timeout > 0 {
 		cfg.Timeout = timeout
 	}
-	cs, err := kubernetes.NewForConfig(cfg)
+	cs, err := newClient(cfg)
 	if err != nil {
-		return nil, fmt.Errorf("build kubernetes client: %w", err)
+		return nil, err
 	}
 
 	all := &corev1.EventList{TypeMeta: metav1.TypeMeta{APIVersion: "v1", Kind: "EventList"}}
@@ -69,6 +69,14 @@ func Live(ctx context.Context, kubeconfig, kubecontext, namespace string, timeou
 		return nil, fmt.Errorf("marshal events: %w", err)
 	}
 	return data, nil
+}
+
+func newClient(cfg *rest.Config) (*kubernetes.Clientset, error) {
+	cs, err := kubernetes.NewForConfig(cfg)
+	if err != nil {
+		return nil, fmt.Errorf("build kubernetes client: %w", err)
+	}
+	return cs, nil
 }
 
 func restConfig(kubeconfig, kubecontext string) (*rest.Config, error) {
